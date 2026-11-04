@@ -17,7 +17,8 @@ Qualquer IA que atuar neste repositório **DEVE** seguir integralmente as diretr
 
 ### Fase 1: Padronização do Ambiente de Desenvolvimento (Concluída)
 - **Data:** 04/11/2026
-- **Decisão:** Estratégia híbrida de ambiente.
+- **Decisão:** Estratégia híbrida de ambiente e organização de branches.
+  - **Branches:** Criada a branch estável `release`, a branch de integração `main` e uma branch de desenvolvimento dedicada para cada membro (`dev-santiago`, `dev-adauclever`, `dev-allan`, `dev-gabriel`, `dev-eurico`).
   - **Docker Compose:** gerencia exclusivamente o contêiner do **MySQL 8** na porta `3306`, com volume persistente e usuário dedicado (`retrogames_user`) e banco `retrogames_db`.
   - **Host local:** .NET SDK 10 e Node.js 22 instalados diretamente na máquina dos integrantes para agilidade de compilação, hot-reload e debugging.
   - **MySQL Workbench:** instalado na máquina host conectando via `localhost:3306`.

@@ -6,15 +6,36 @@ Repositório oficial do projeto de desenvolvimento web **RetroGames Marketplace*
 
 ## 👥 Integrantes do Grupo
 
-| Nome Completo | Matrícula / E-mail | GitHub |
-| :--- | :--- | :--- |
-| Eurico Santiago Climaco Rodrigues | [san14311982@gmail.com] | 2024.1.08.036  |'
-| *Membro 2* | | |
-| *Membro 3* | | |
-| *Membro 4* | | |
-| *Membro 5* | | |
+| Nome Completo | Matrícula / E-mail | GitHub / Usuário | Branch Individual |
+| :--- | :--- | :--- | :--- |
+| **Eurico Santiago Climaco Rodrigues** | san14311982@gmail.com | 2024.1.08.036 | `dev-santiago` |
+| **Adauclever** | | | `dev-adauclever` |
+| **Allan** | | | `dev-allan` |
+| **Gabriel** | | | `dev-gabriel` |
+| **Eurico** | | | `dev-eurico` |
 
-> *Substitua os campos acima com os dados oficiais do grupo.*
+---
+
+## 🌿 Estrutura de Branches e Fluxo Git
+
+Para manter o repositório organizado e sem conflitos durante o trabalho simultâneo dos 5 integrantes:
+
+- **`release`**: Branch estável de entrega/produção. Recebe apenas código testado e pronto para avaliação.
+- **`main`**: Branch de integração contínua. É para onde convergem os Pull Requests das funcionalidades prontas.
+- **`dev-{membro}`**: Branch de trabalho individual de cada membro (`dev-santiago`, `dev-adauclever`, `dev-allan`, `dev-gabriel`, `dev-eurico`).
+
+### Como trabalhar no dia a dia:
+1. Mude para a sua branch antes de começar a codificar:
+   ```bash
+   git checkout dev-<seu-nome>
+   ```
+2. Mantenha sua branch sincronizada com as novidades da `main`:
+   ```bash
+   git fetch origin
+   git merge origin/main
+   ```
+3. Ao concluir uma etapa, faça o commit, envie sua branch e abra um **Pull Request (PR)** para a `main`.
+4. Fechamentos de versão e entregas estáveis são mesclados da `main` para a `release`.
 
 ---
 
