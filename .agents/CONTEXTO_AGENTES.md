@@ -7,9 +7,10 @@ Este arquivo registra o contexto compartilhado entre os assistentes de IA de tod
 ## 1. Regra de Ouro para os Assistentes
 Qualquer IA que atuar neste repositório **DEVE** seguir integralmente as diretrizes descritas em [.agents/agents.md](.agents/agents.md). Principais lembretes:
 - **Linguagem:** Respostas, comentários, classes, métodos e variáveis sempre em **português**.
-- **Stack Fixa:** .NET 10 (ASP.NET Core), ADO.NET (MySqlConnector), MySQL 8, FluentValidation, xUnit + Moq, React + Vite + Bootstrap + Axios. **Não adicionar ORMs (EF, Dapper), JWT, TypeScript nem Tailwind**.
+- **Stack Fixa:** .NET 10 (ASP.NET Core), ADO.NET (MySqlConnector), MySQL 8, FluentValidation, xUnit + Moq, React + Vite + Bootstrap + Axios, DotNetEnv. **Não adicionar ORMs (EF, Dapper), JWT, TypeScript nem Tailwind**.
 - **Arquitetura:** 1 Repository por tabela, sem `JOIN` ou subconsultas entre tabelas no SQL (composição com LINQ no Service).
-- **Segurança:** Acesso ao banco via usuário da aplicação (`retrogames_user`), nunca `root`. Segredos via `dotnet user-secrets`.
+- **Convenções de Propriedades:** Propriedades em Models, ServiceModels e ApiModels não repetem o nome da classe (`Plataforma.Id`, `Plataforma.Nome`). PK é sempre `Id`; FK é `Id` + entidade (`Jogo.IdPlataforma`). Strings obrigatórias iniciam com `string.Empty`.
+- **Segurança e Variáveis de Ambiente:** No curso, a aplicação pode conectar como `root` localmente. Segredos e connection string ficam em `.env` na raiz carregados com `DotNetEnv` (exemplo versionado em `.env.example`). Não usar `dotnet user-secrets` nem senhas em `appsettings*.json`.
 
 ---
 

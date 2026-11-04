@@ -41,6 +41,8 @@ Se duas referências se contradizem, aponte o conflito e pergunte ao estudante q
 - Uma classe por tabela em cada camada, com o nome da tabela sem o prefixo `tb_`: `tb_condicao_jogo` → `CondicaoJogo` (modelo), `ICondicaoJogoRepository`/`CondicaoJogoRepository`, `ICondicaoJogoService`/`CondicaoJogoService`, `CondicaoJogoController` (rota `/api/CondicaoJogo`).
 - Não crie classes genéricas que agrupem várias tabelas (por exemplo, um "TabelaTipoRepository").
 - ApiModels seguem, sempre que possível, o padrão `{Ação}{Entidade}{Request|Response}ApiModel`, por exemplo `InserirPlataformaRequestApiModel`.
+- Propriedades (Model, ServiceModels e ApiModels) não repetem o nome da classe: `Plataforma.Id` e `Plataforma.Nome`, nunca `PlataformaId` ou `PlataformaNome`. A chave primária é sempre `Id`; a chave estrangeira é `Id` + nome da classe referenciada (`Jogo.IdPlataforma`). O nome de outra entidade só aparece quando o dado vem dela (`NomePlataforma` em um ApiModel de jogo).
+- Propriedade de texto obrigatória começa com `string.Empty`.
 
 ### Banco de dados
 
@@ -93,8 +95,8 @@ using (var transactionScope = new TransactionScope(TransactionScopeOption.Requir
 
 ### Segurança
 
-- A aplicação acessa o MySQL com um usuário próprio, só com permissão de ler e gravar dados no banco do RetroGames; nunca com `root`.
-- Connection string (chave `ConnectionStrings:Default`, no projeto `RetroGames.WebApi`) e senha do administrador inicial ficam em `dotnet user-secrets`. Nunca escreva credenciais em arquivo versionado, nem em exemplos.
+- No curso, por simplicidade, a aplicação acessa o MySQL com o usuário local do estudante (por exemplo, `root`). Em sistemas reais, ela usaria um usuário próprio, só com as permissões necessárias.
+- Connection string e senha do administrador inicial ficam no arquivo `.env`, na raiz do repositório, que está no `.gitignore` (como no Node): `ConnectionStrings__Default`, `AdminInicial__Email` e `AdminInicial__Senha`. O modelo versionado é o `.env.example`, só com `SUA_SENHA` no lugar das senhas. A API carrega o `.env` com o pacote DotNetEnv. Os `appsettings*.json` são versionados e nunca têm senha. Não use `dotnet user-secrets`. Nunca escreva credenciais em arquivo versionado, nem em exemplos.
 - Senhas são guardadas apenas como hash (`PasswordHasher`).
 - Sessão por cookie com proteção CSRF; não guarde token no `localStorage`.
 - `bin/`, `obj/`, `node_modules/` e `dist/` não são versionados.

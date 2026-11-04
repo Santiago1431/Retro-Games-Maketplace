@@ -84,16 +84,25 @@ Para parar o banco sem perder os dados:
 docker compose down
 ```
 
-##### 3. Conexão via MySQL Workbench:
+##### 3. Conexão via MySQL Workbench e Aplicação:
 - **Hostname:** `localhost` (ou `127.0.0.1`)
 - **Port:** `3306`
-- **Para administração/scripts:**
+- **Usuário Root / Local (usado para desenvolvimento):**
   - **Username:** `root`
   - **Password:** `root_dev_password`
-- **Para a aplicação:**
+  - **Default Schema:** `retrogames_db`
+- **Usuário Dedicado:**
   - **Username:** `retrogames_user`
   - **Password:** `retrogames_dev_password`
-  - **Default Schema:** `retrogames_db`
+
+##### 4. Variáveis de Ambiente (.env):
+Conforme as novas diretrizes do projeto:
+- A aplicação .NET carrega suas configurações via arquivo `.env` na raiz através do pacote `DotNetEnv` (não usamos `dotnet user-secrets` nem senhas em `appsettings.json`).
+- Crie seu arquivo `.env` a partir do modelo:
+  ```bash
+  cp .env.example .env
+  ```
+- O arquivo `.env` já está no `.gitignore` e nunca deve ser versionado.
 
 ---
 
