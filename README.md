@@ -12,7 +12,7 @@ Repositório oficial do projeto de desenvolvimento web **RetroGames Marketplace*
 | **Adauclever Pacheco Lino** |  adauclever@gmail.com / 2025.1.08.001 | @Adauclever  | `dev-adauclever` |
 | **Allan** |   allanvictorpdasilva@gmail.com / 2025.2.08.002 | @allanvictor-dev | `dev-allan` |  
 | **Gabriel** |   gabrielhspereira36@gmail.com / 2025.1.08.036 | @gabrielhsp-sys  | `dev-gabriel` |
-.
+
 ---
 
 ## 🌿 Estrutura de Branches e Fluxo Git
