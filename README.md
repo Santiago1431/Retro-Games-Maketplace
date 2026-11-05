@@ -9,10 +9,9 @@ Repositório oficial do projeto de desenvolvimento web **RetroGames Marketplace*
 | Nome Completo | Matrícula / E-mail | GitHub / Usuário | Branch Individual |
 | :--- | :--- | :--- | :--- |
 | **Eurico Santiago Climaco Rodrigues** | san14311982@gmail.com / 2024.1.08.036 | @Santiago1431 | `dev-santiago` |
-| **Adauclever** | | | `dev-adauclever` |
-| **Allan** | | | `dev-allan` |
-| **Gabriel** | | | `dev-gabriel` |
-| **Eurico** | | | `dev-eurico` |
+| **Adauclever Pacheco Lino** |  adauclever@gmail.com / 2025.1.08.001 | @Adauclever  | `dev-adauclever` |
+| **Allan Victor Pereira da Silva** |   allanvictorpdasilva@gmail.com / 2025.2.08.002 | @allanvictor-dev | `dev-allan` |  
+| **Gabriel Henrique Silva Pereira** |   gabrielhspereira36@gmail.com / 2025.1.08.036 | @gabrielhsp-sys  | `dev-gabriel` |
 
 ---
 
